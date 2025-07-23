@@ -72,4 +72,4 @@ async function deleteNote(id, noteDiv) {
 }
 
 // Fetch notes when the page loads
-fetchNotes();
+fetch("https://week7-notesapp.onrender.com/api/notes");
