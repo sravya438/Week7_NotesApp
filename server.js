@@ -1,15 +1,19 @@
 //import required modules
 const express = require("express");
 const path = require("path");
+const cors = require('cors');
 const fs = require('fs');
 const { v4: uuidv4 } = require("uuid"); // For unique IDs
+
 
 //create an instance of express
 const app=express();
 
 //create the port
-const PORT=3000;
+const PORT=process.env.PORT ||3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+app.use(cors());
 //Middleware to parse JSON requests
 app.use(express.json());
 
@@ -102,7 +106,7 @@ app.delete("/api/notes/:id", (req, res) => {
 
 
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// // Start the server
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
