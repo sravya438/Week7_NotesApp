@@ -3,7 +3,7 @@ const addNoteBtn = document.getElementById("addNoteBtn");
 const noteInput = document.getElementById("noteInput");
 
 // Detect backend URL (works with Live Server and Express server)
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = window.location.origin;
 
 // Fetch and display all notes when the page loads
 async function fetchNotes() {
